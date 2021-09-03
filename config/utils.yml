@@ -1,5 +1,5 @@
 images:
-  applogic: zeusdev27/applogic:latest
+  applogic: zsmartex/applogic:latest
   arke: quay.io/openware/arke:2.6.0-bccb72c
   superset: amancevice/superset:0.28.1
 superset:

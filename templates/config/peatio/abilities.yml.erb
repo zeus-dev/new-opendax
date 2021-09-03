@@ -10,6 +10,7 @@ roles:
   - trader
   - maker
   - sa_maker
+  - reporter
 
 admin_permissions:
   superadmin:
@@ -28,6 +29,7 @@ admin_permissions:
       - WithdrawLimit
       - Blockchain
       - Currency
+      - BlockchainCurrency
       - Engine
       - Market
       - TradingFee
@@ -49,30 +51,30 @@ admin_permissions:
       - Operations::Expense
       - Operations::Liability
       - Operations::Revenue
+      - Member
+      - Account
       - Beneficiary
+      - PaymentAddress
       - Deposit
       - Withdraw
       - WithdrawLimit
+      - Blockchain
+      - Currency
+      - BlockchainCurrency
       - Engine
       - Market
       - TradingFee
       - Wallet
-      - Adjustment 
+      - Adjustment
       - InternalTransfer
       - WhitelistedSmartContract
-      - Currency
-      - Blockchain
     read:
       - Trade
       - Order
-      - Account
-      - PaymentAddress
-      - Member
     create:
       - Deposits::Fiat
     update:
       - Order
-      - Member
   technical:
     read:
       - Operations::Account
@@ -87,11 +89,11 @@ admin_permissions:
       - WithdrawLimit
       - Blockchain
       - Currency
+      - BlockchainCurrency
       - Engine
       - Market
       - TradingFee
       - Wallet
-      - WhitelistedSmartContract
     update:
       - Order
   accountant:
@@ -110,6 +112,7 @@ admin_permissions:
       - WithdrawLimit
       - Blockchain
       - Currency
+      - BlockchainCurrency
       - Engine
       - Market
       - TradingFee
@@ -134,6 +137,7 @@ admin_permissions:
       - Deposit
       - Withdraw
       - Currency
+      - BlockchainCurrency
       - Engine
       - Market
       - Trade
@@ -151,12 +155,25 @@ admin_permissions:
       - Deposit
       - Withdraw
       - Currency
+      - BlockchainCurrency
       - Engine
       - Market
       - Trade
       - Order
       - InternalTransfer
-
+  reporter:
+    read:
+      - Operations::Revenue
+      - Operations::Account
+      - Operations::Asset
+      - Operations::Expense
+      - Operations::Liability
+      - Deposit
+      - Withdraw
+      - Currency
+      - BlockchainCurrency
+      - Wallet
+      - Blockchain
 user_permissions:
   superadmin:
     manage: all
@@ -177,6 +194,8 @@ user_permissions:
   trader:
     manage: all
   maker:
+    manage: all
+  reporter:
     manage: all
   sa_maker:
     read:

@@ -1,20 +1,24 @@
-- name:      peatio-default-engine
-  driver:    peatio
-  state:     online
-- name:      local-finex-spot-engine
-  driver:    finex-spot
-  state:     online
-- name:      opendax-finex-spot-engine
-  driver:    opendax
-  url:       https://www.opendax.io/api/v2/finex
-  key:       ""
-  secret:    ""
-  # The data field for store some special data engine
+- name:              peatio-default-engine
+  driver:            peatio
+  state:             online
+- name:              local-finex-spot-engine
+  driver:            finex-spot
+  state:             online
+- name:              opendax-finex-spote-engine
+  driver:            opendax
+  uid:               U123456789
+  url:               https://www.opendax.io/api/v2/finex
+  key:               ""
+  secret:            ""
+  data:              {}
+  # The data field for store some special engines metadata
   # Can be used in upstream worker
-  data: |
-    {
-          "rest"=>"https://www.opendax.io/api/v2/finex",
-          "websocket"=>"wss://www.opendax.io/api/v2/ranger",
-          "trade_proxy"=>true,
-    }
-  state:    online
+  # Example for upstream:
+  #                {
+  #                 "rest"=>"https://url",
+  #                 "websocket"=>"wss://url",
+  #                 "trade_proxy"=>true,
+  #                 "orderbook_proxy"=>"true"
+  #                }
+  # }
+  state:             online

@@ -1,25 +1,25 @@
 # Manage the transit secrets engine
-path "transit/keys/test_*" {
+path "transit/keys/<%= @config['app']['name'].downcase %>_*" {
   capabilities = ["create", "read", "list"]
 }
 # Encrypt Payment Addresses secrets
-path "transit/encrypt/test_payment_addresses_*" {
+path "transit/encrypt/<%= @config['app']['name'].downcase %>_payment_addresses_*" {
   capabilities = ["create", "read", "update"]
 }
 # Decrypt Payment Addresses secrets
-path "transit/decrypt/test_payment_addresses_*" {
+path "transit/decrypt/<%= @config['app']['name'].downcase %>_payment_addresses_*" {
   capabilities = ["create", "read", "update"]
 }
 # Decrypt wallets secrets
-path "transit/decrypt/test_wallets_*" {
+path "transit/decrypt/<%= @config['app']['name'].downcase %>_wallets_*" {
   capabilities = ["create", "read", "update"]
 }
 # Encrypt blockchains data
-path "transit/encrypt/test_blockchains_*" {
+path "transit/encrypt/<%= @config['app']['name'].downcase %>_blockchains_*" {
   capabilities = [ "create", "read", "update" ]
 }
 # Decrypt blockchains data
-path "transit/decrypt/test_blockchains_*" {
+path "transit/decrypt/<%= @config['app']['name'].downcase %>_blockchains_*" {
   capabilities = [ "create", "read", "update" ]
 }
 # Renew tokens

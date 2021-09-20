@@ -18,7 +18,7 @@ describe Opendax::Renderer do
         'peatio' => 'rubykube/peatio:latest',
         'barong' => 'rubykube/barong:latest',
         'frontend' => 'rubykube/mikroapp:latest',
-        'tower' => 'rubykube/tower:latest'
+        'castle' => 'zsmartex/castle:latest'
       },
       'vendor' => {
         'frontend' => 'https://github.com/rubykube/mikroapp.git'

@@ -1,16 +1,16 @@
-path "transit/test_*" {
+path "transit/<%= @config['app']['name'].downcase %>_*" {
   capabilities = [ "read" ]
 }
 # Decrypt secrets
-path "transit/decrypt/test_*" {
+path "transit/decrypt/<%= @config['app']['name'].downcase %>_*" {
   capabilities = [ "create", "update" ]
 }
 # Use key for signing
-path "transit/sign/test_*" {
+path "transit/sign/<%= @config['app']['name'].downcase %>_*" {
   capabilities = ["update"]
 }
 # Create transit key
-path "transit/keys/test_*" {
+path "transit/keys/<%= @config['app']['name'].downcase %>_*" {
   capabilities = ["create"]
 }
 # Renew tokens

@@ -59,6 +59,7 @@ namespace :service do
     def start
       puts '----- Starting influxdb -----'
       sh 'docker-compose up -d influxdb'
+      sleep 5
       sh 'docker-compose exec influxdb bash -c "cat peatio.sql | influx"'
     end
 
@@ -150,7 +151,7 @@ namespace :service do
   end
 
   desc 'Run mikro app (barong, peatio)'
-  task :app, [:command] => [:backend, :setup] do |task, args|
+  task :app, [:command] => [:backend, 'vault:setup', 'vault:load_policies', 'render:config'] do |task, args|
     args.with_defaults(:command => 'start')
 
     def start
@@ -183,18 +184,18 @@ namespace :service do
     @switch.call(args, method(:start), method(:stop))
   end
 
-  desc 'Run the tower application'
-  task :tower, [:command] do |task, args|
+  desc 'Run the castle application'
+  task :castle, [:command] do |task, args|
     args.with_defaults(:command => 'start')
 
     def start
-      puts '----- Starting the tower -----'
-      sh 'docker-compose up -d tower'
+      puts '----- Starting the castle -----'
+      sh 'docker-compose up -d castle'
     end
 
     def stop
-      puts '----- Stopping the tower -----'
-      sh 'docker-compose rm -fs tower'
+      puts '----- Stopping the castle -----'
+      sh 'docker-compose rm -fs castle'
     end
 
     @switch.call(args, method(:start), method(:stop))
@@ -284,7 +285,7 @@ namespace :service do
       Rake::Task["service:setup"].invoke('start')
       Rake::Task["service:app"].invoke('start')
       Rake::Task["service:frontend"].invoke('start')
-      Rake::Task["service:tower"].invoke('start')
+      Rake::Task["service:castle"].invoke('start')
       Rake::Task["service:utils"].invoke('start')
       Rake::Task["service:daemons"].invoke('start')
     end
@@ -296,7 +297,7 @@ namespace :service do
       Rake::Task["service:setup"].invoke('stop')
       Rake::Task["service:app"].invoke('stop')
       Rake::Task["service:frontend"].invoke('stop')
-      Rake::Task["service:tower"].invoke('stop')
+      Rake::Task["service:castle"].invoke('stop')
       Rake::Task["service:utils"].invoke('stop')
       Rake::Task["service:daemons"].invoke('stop')
     end

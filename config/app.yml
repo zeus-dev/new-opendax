@@ -1,8 +1,8 @@
 ---
 app:
   name: OpenDAX
-  domain: smartchainers.in
-  subdomain: exchange
+  domain: domain .com
+  subdomain: www
   show_landing: true
 render_protect: false
 csrfEnabled: false
@@ -11,10 +11,10 @@ ssl:
   email: support@smartchainers.com
 updateVersions: false
 images:
-  peatio: peatio:sideorder
-  barong: barong:1.1
+  peatio: zeusdev27/peatio:latest
+  barong: zeusdev27/barong:latest
   frontend: coverapp:1.0
-  tower: quay.io/openware/tower:2.6.66
+  castle: zeusdev27/cas:latest
   rango: quay.io/openware/rango:2.6.1
 finex:
   enabled: false
@@ -52,8 +52,8 @@ storage:
 twilio:
   enabled: true
   phone_number: "+15622685594"
-  account_sid: AC03e8fa1f97d721df11c3307095e8546f
-  auth_token: 2277da908f2e1edb3edbf4ed2b2d5dad
+  account_sid: XXAC03e8fa1f97d721df11c3307095e8546f
+  auth_token: XX2277da908f2e1edb3edbf4ed2b2d5dad
 gaTrackerKey: ''
 captcha:
   type: none

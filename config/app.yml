@@ -1,6 +1,6 @@
 ---
 app:
-  name: OpenDAX
+  name: DAX
   domain: domain.com
   subdomain: www
   show_landing: true

@@ -5,7 +5,7 @@ images:
 superset:
   email: superset-admin@openware.com
   username: admin
-  password: changeme
+  password: changeme1
 arke:
   log_level: INFO
   accounts:

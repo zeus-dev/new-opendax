@@ -1,7 +1,7 @@
 ---
 app:
   name: OpenDAX
-  domain: domain .com
+  domain: mydomain.com
   subdomain: www
   show_landing: true
 render_protect: false

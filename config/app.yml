@@ -2,7 +2,7 @@
 app:
   name: daxo
   domain: coincooper.com
-  subdomain: www
+  subdomain: demo
   show_landing: true
 render_protect: false
 csrfEnabled: false

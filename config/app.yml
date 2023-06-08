@@ -8,7 +8,7 @@ render_protect: false
 csrfEnabled: false
 ssl:
   enabled: true
-  email: support@smartchainers.com
+  email: support@smartchainers.in
 updateVersions: false
 images:
   peatio: zeusdev27/peatio:latest

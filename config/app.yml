@@ -1,6 +1,6 @@
 ---
 app:
-  name: dax
+  name: zeus-dax
   domain: coincooper.com
   subdomain: demo
   show_landing: true

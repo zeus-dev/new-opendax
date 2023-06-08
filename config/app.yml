@@ -1,6 +1,6 @@
 ---
 app:
-  name: daxx
+  name: daxo
   domain: domain.com
   subdomain: www
   show_landing: true

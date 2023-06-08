@@ -1,6 +1,6 @@
 ---
 app:
-  name: daxo
+  name: dax
   domain: coincooper.com
   subdomain: demo
   show_landing: true

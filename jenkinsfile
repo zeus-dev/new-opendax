@@ -1,34 +1,20 @@
-pipeline{
-    agent{
-        label "opendax"
-    }
-    stages{
-        stage("build"){
-            steps{
-                git 'https://github.com/opendax.git'
-            }
-            post{
-                always{
-                    echo "========always========"
-                }
-                success{
-                    echo "========A executed successfully========"
-                }
-                failure{
-                    echo "========A execution failed========"
-                }
+pipeline {
+    agent any
+    stage {
+        stage ("build"){
+            steps {
+                echo 'building the application'
             }
         }
-    }
-    post{
-        always{
-            echo "========always========"
+        stage ("test"){
+            steps {
+                echo 'testing the application'
+            }
         }
-        success{
-            echo "========pipeline executed successfully ========"
-        }
-        failure{
-            echo "========pipeline execution failed========"
+        stage ("deploy"){
+            steps {
+                echo 'deploying the application'
+            }
         }
     }
 }

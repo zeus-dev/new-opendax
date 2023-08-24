@@ -1,4 +1,4 @@
-FROM ruby:2.6.1
+FROM ruby:3.1.3
 
 ENV APP_HOME=/home/app
 

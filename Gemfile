@@ -13,7 +13,7 @@ gem 'sshkey' # SSH key generation gem
 gem 'bump'
 gem 'rack', '>= 2.2.6.4'
 gem 'sinatra', '>= 2.2.3'
-gem 'puma', '>= 5.6.7'
+gem 'puma', '>= 6.4.2'
 gem 'rspec'
 gem 'jwt'
 gem 'faraday'
